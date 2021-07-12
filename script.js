@@ -1,11 +1,11 @@
-//acrescenta classe pixel aos tr 
-let td = document.querySelectorAll('td');
+//  acrescenta classe pixel aos tr
+const td = document.querySelectorAll('td');
 
 for (let index in td) {
     td[index].className = 'pixel';
 }
 
-//troca selected via click
+//  troca selected via click
 function addSelected() {
 let color = document.querySelectorAll('.color');
 
@@ -28,7 +28,7 @@ for (let index = 0; index < color.length; index += 1) {
 }
 addSelected();
 
-//Troca aplica a cor selecionada
+    //  Troca aplica a cor selecionada
 function aplicaColor() {
     let color = document.querySelectorAll('li');
 
@@ -48,3 +48,11 @@ function aplicaColor() {
     }
 }
 aplicaColor();
+
+//  Botão limpar
+document.getElementById('clear-board').addEventListener('click', function () {
+    let tdir = document.querySelectorAll('td');
+    for (let secondIndex = 0; secondIndex < tdir.length; secondIndex += 1) {
+        td[secondIndex].style.backgroundColor = 'white';
+    }
+});

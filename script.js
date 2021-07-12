@@ -35,7 +35,7 @@ function aplicaColor() {
     for (let index = 0; index < color.length; index += 1) {
         function addSelected(event) {
             if (color[index].classList.contains('selected')) {
-                event.target.style.backgroundColor = 'black';
+                event.target.style.backgroundColor = window.getComputedStyle(color[index]).backgroundColor;
             }
         }
 

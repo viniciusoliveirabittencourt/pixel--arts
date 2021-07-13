@@ -6,29 +6,25 @@ for (let index in td) {
 }
 
 //  troca selected via click
+
 function addSelected() {
-let color = document.querySelectorAll('.color');
-
-for (let index = 0; index < color.length; index += 1) {
-    function addSelected(event) {
+    const color = document.querySelectorAll('.color');
+    function addSelec(event) {
+      for (let index = 0; index < color.length; index += 1) {
         if (color[index].classList.contains('selected')) {
-            color[index].classList.remove('selected');
-        } else {
-            event.target.classList.add('selected');
+          color[index].classList.remove('selected');
         }
+      }
+      event.target.classList.add('selected');
     }
-
-    let li = document.querySelectorAll('li');
-    for (let secondIndex in li) {
-        if (li[secondIndex].click) {
-            li[secondIndex].addEventListener('click', addSelected);
-        }
+    const li = document.querySelectorAll('li');
+    for (let i = 0; i < li.length; i += 1) {
+      li[i].addEventListener('click', addSelec);
     }
-}
-}
-addSelected();
+  }
+  addSelected();
 
-    //  Troca aplica a cor selecionada
+//  Troca aplica a cor selecionada
 function aplicaColor() {
     let color = document.querySelectorAll('li');
 
